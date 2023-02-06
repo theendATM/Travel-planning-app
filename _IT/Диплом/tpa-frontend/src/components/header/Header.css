@@ -1,0 +1,37 @@
+.headerButtons{
+    margin-left: 7%;
+    display: flex;
+    gap:40px;
+    align-items: center;
+}
+
+.header{
+    width: 100%;
+}
+
+.headerItems{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerProfile{
+    margin-right: 7%;
+    padding-left: 40px;
+}
+
+.headerLine{
+    height: 1px;
+    width: 100%;
+    background-color: #697CA6;
+}
+
+.userNameHeader{
+    margin-right: 5px;
+}
+
+.headerButtons span:hover, .userNameHeader:hover{
+    cursor: pointer;
+    color: black;
+}

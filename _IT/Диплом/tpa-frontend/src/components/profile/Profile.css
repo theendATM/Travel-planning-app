@@ -1,0 +1,116 @@
+.profile{
+    margin: 0 7%;
+    padding-bottom: 30px;
+}
+
+.profile .headerBlock{
+    font-size: 27px;
+    margin-top: 70px;
+    padding-bottom: 30px;
+}
+
+
+td:not(td:last-child){
+    padding-right: 150px;
+}
+td:not(.noPadding){
+    padding-bottom: 50px;
+}
+
+.changeButton{
+    font-size: 16px;
+    color: #718FFD;
+
+}
+
+.headerBlock{
+    display: flex;
+    align-items: center;
+}
+
+.headerBlock>.changeButton{
+    padding-left: 50px;
+}
+.deleteButton{
+    font-size: 16px;
+    color: #F54343;
+}
+
+.changeButton:hover, .deleteButton:hover{
+    cursor: pointer;
+}
+
+
+
+.modalTable{
+    padding-right: 50px;
+    padding-bottom: 30px;
+}
+
+.profileModal{
+    width:100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.profileModal.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.profileModalContent{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: white;
+}
+.headerText{
+    font-size: 27px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 60px;
+}
+
+.modalChild{
+    padding-left: 60px;
+}
+
+.modalChild table td:not(td:last-child){
+    padding-right: 50px;
+    
+}
+
+.modalChild table td{
+    padding-bottom: 30px;
+}
+
+.modalButtons{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-right: 60px;
+}
+
+.cancelButton, .saveButton{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: #718FFD solid 1px;
+   
+}
+.cancelButton{
+     background: none;
+}
+
+.saveButton{
+    background-color: #718FFD;
+    color: white;
+}

@@ -1,0 +1,28 @@
+.mainPageDesc{
+    background: url("../../components/img/mainImage.png");
+    height: calc(100vh - 81px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainPageDesc>span{
+    color: white;
+    font-size: 60px;
+    align-self: center;
+    padding-top:70px;
+}
+
+.mainPageAdvantages{
+    color: black;
+    font-size: 46px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-bottom: 100px;
+}
+
+.mainPageAdvantages ul{
+    margin: 0px;
+}
