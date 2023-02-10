@@ -40,8 +40,12 @@ td:not(.noPadding){
     cursor: pointer;
 }
 
-
-
+.changeButton:hover{
+    color: #0735DC;
+}
+.deleteButton:hover{
+    color:#A61515;
+}
 .modalTable{
     padding-right: 50px;
     padding-bottom: 30px;
@@ -113,4 +117,21 @@ td:not(.noPadding){
 .saveButton{
     background-color: #718FFD;
     color: white;
+}
+
+input, input:focus, select {
+    border: none;
+    color:inherit;
+    font-size: inherit;
+    font-family: inherit;
+    border-bottom: 1px solid #697CA6;
+    outline: none;
+}
+
+ .saveButton:hover{
+    background: #0735DC;
+}
+
+.cancelButton:hover{
+    background: #BFCDFD;
 }

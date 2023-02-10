@@ -1,6 +1,9 @@
 import './Profile.css';
 import ProfileModal from './ProfileModal';
 import ModalPI from './ModalPI';
+import ModalPN from './ModalPN';
+import ModalEA from './ModalEA';
+import ModalTourist from './ModalTourist';
 import { useState } from 'react';
 
 const Profile=()=>{
@@ -94,13 +97,13 @@ const Profile=()=>{
             </ProfileModal>
 
             <ProfileModal active={modalActive2} setActive={setModalActive2}>
-                <div>2</div>
+                <ModalPN/>
             </ProfileModal>
             <ProfileModal active={modalActive3} setActive={setModalActive3}>
-                <div>3</div>
+                <ModalEA/>
             </ProfileModal>
             <ProfileModal active={modalActive4} setActive={setModalActive4}>
-                <div>4</div>
+                <ModalTourist/>
             </ProfileModal>
             <ProfileModal active={modalActive5} setActive={setModalActive5}>
                 <div>5</div>

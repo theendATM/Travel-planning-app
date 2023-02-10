@@ -14,7 +14,7 @@ const Header=()=>{
                     <img src={logo} alt=''></img>
                     <span onClick={()=>navigate('/')}>Главная</span>
                     <span onClick={()=>navigate('/profile')}>Профиль</span>
-                    <span>Создание плана</span>
+                    <span onClick={()=>navigate('/personalPlans')}>Создание плана</span>
                     <span>Готовые планы</span>
                     <span>Развлечения</span>
                 </div>

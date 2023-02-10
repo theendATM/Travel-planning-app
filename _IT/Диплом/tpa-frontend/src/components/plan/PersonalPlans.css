@@ -1,0 +1,16 @@
+.bold{
+    font-weight: 700;
+}
+.subtitle{
+    font-size: 21px;
+    padding-bottom: 30px;
+}
+
+.modalButtonsNextPage{
+    padding-left: 60px;
+}
+
+.planProgress{
+    padding-left: 50px;
+    padding-top: 5px;
+}
