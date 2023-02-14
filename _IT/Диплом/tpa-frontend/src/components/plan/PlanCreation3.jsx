@@ -29,17 +29,63 @@ const PlanCreation3 = () => {
           <span>Дополнительная информация:</span>
         </div>
 
-        <div className="modalButtons modalButtonsNextPage">
-          <button className="cancelButton">Сохранить черновик</button>
-          <button
-            className="saveButton"
-            onClick={() => navigate("/planCreation/4")}
-          >
-            Далее
-          </button>
+          <table>
+            <tr>
+              <td>Адрес места размещения:</td>
+              <td>
+                <input type="text" placeholder="Введите адрес" />
+              </td>
+            </tr>
+            <tr>
+              <td className="modalTable">Дата и время прибытия:</td>
+              <td>
+                <input type="datetime-local" />
+              </td>
+            </tr>
+            <tr>
+              <td className="modalTable">Дата и время убытия:</td>
+              <td>
+                <input type="datetime-local" />
+              </td>
+            </tr>
+            <tr>
+              <td className="modalTable">Желаемое время выхода из дома:</td>
+              <td>
+                <input type="time" />
+              </td>
+            </tr>
+            <tr>
+              <td className="modalTable">Желаемое время прибытия домой:</td>
+              <td>
+                <input type="time" />
+              </td>
+            </tr>
+
+            <tr>
+              <td className="modalTable">Предпочитаемый вид перемещения:</td>
+              <td>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+
+          <div className="modalButtons modalButtonsNextPage">
+            <button className="cancelButton">Сохранить черновик</button>
+            <button
+              className="saveButton"
+              onClick={() => navigate("/planCreation/4")}
+            >
+              Далее
+            </button>
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 export default PlanCreation3;

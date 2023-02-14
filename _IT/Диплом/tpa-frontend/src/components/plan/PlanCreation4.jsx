@@ -29,13 +29,115 @@ const PlanCreation4 = () => {
           <span>Подтверждение плана:</span>
         </div>
 
+        <table>
+          <tr>
+            <td>
+              <table className="dayPlan">
+                <tr>
+                  <td className="dayPlanSlot noPadding">
+                    22.12.2022, ПОНЕДЕЛЬНИК
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">
+                    10:00 - 10:30: Путь к объекту Красная площадь (Пешком)
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">10:30 - 12:30: Красная площадь</td>
+                </tr>
+                <tr>
+                  <td className="noPadding">12:30 - 13:30: Обед</td>
+                </tr>
+                <tr>
+                  <td className="noPadding">
+                    13:30 - 14:30: Путь к объекту Третьяковская галерея (Такси)
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">
+                    14:30 - 17:30: Третьяковская галерея
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">
+                    17:30 - 18:30: Путь к месту размещения (Такси)
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td className="outOfPlan">
+              <span>НЕ ВОШЕДШИЕ В ПЛАН МЕСТА</span>
+              <br></br>
+              <span>
+                Чтобы включить данные места в план, отметьте их обязательным
+                посещением
+              </span>
+              <table className="titleOutOfPlan">
+                <tr>
+                  <td className="noPadding">Место 1</td>
+                  <td className="noPadding">
+                    Обязательное посещение<input type="checkbox" className="checkboxVisiting"></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">Место 2</td>
+                  <td className="noPadding">
+                    Обязательное посещение<input type="checkbox" className="checkboxVisiting"></input>
+                  </td>
+                </tr>
+              </table>
+              <div className="refreshPlan">
+                 <button className="saveButton">Обновить план</button>
+              </div>
+             
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table className="dayPlan">
+                <tr>
+                  <td className="dayPlanSlot noPadding">
+                    22.12.2022, ПОНЕДЕЛЬНИК
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">
+                    10:00 - 10:30: Путь к объекту Красная площадь (Пешком)
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">10:30 - 12:30: Красная площадь</td>
+                </tr>
+                <tr>
+                  <td className="noPadding">12:30 - 13:30: Обед</td>
+                </tr>
+                <tr>
+                  <td className="noPadding">
+                    13:30 - 14:30: Путь к объекту Третьяковская галерея (Такси)
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">
+                    14:30 - 17:30: Третьяковская галерея
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">
+                    17:30 - 18:30: Путь к месту размещения (Такси)
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+
         <div className="modalButtons modalButtonsNextPage">
           <button className="cancelButton">Сохранить черновик</button>
           <button
-            className="saveButton"
-            onClick={() => navigate("/planCreation/4")}
-          >
-            Далее
+            className="saveButton">
+            Сохранить план
           </button>
         </div>
       </div>

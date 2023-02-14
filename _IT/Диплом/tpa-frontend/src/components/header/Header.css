@@ -31,7 +31,20 @@
     margin-right: 5px;
 }
 
-.headerButtons span:hover, .userNameHeader:hover{
+.headerButtons span:hover{
     cursor: pointer;
     color: black;
 }
+
+.exitIcon{
+    width: 16px;
+    margin-left: 10px;
+}
+
+.hidden{
+    display: none;
+  }
+
+.highlight{
+    color: #718FFD;
+  }

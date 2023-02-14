@@ -12,13 +12,10 @@ return(
                 <table>
                     <tr>
                         <td className='modalTable'>E-mail</td>
-                        <td><input type='email' defaultValue={'sdfsdf@mail.ru'}/></td>
+                        <td><input type='email' defaultValue='sdfsdf@mail.ru'/></td>
                     </tr>
                 </table>
-                <div className='modalButtons'>
-                    <button className='cancelButton'>Отменить</button>
-                    <button className='saveButton'>Сохранить</button>
-                </div>
+
 
     </div>
  )

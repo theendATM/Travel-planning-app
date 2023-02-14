@@ -31,10 +31,6 @@ return(
                             </td>
                     </tr>
                 </table>
-                <div className='modalButtons'>
-                    <button className='cancelButton'>Отменить</button>
-                    <button className='saveButton'>Сохранить</button>
-                </div>
 
     </div>
  )   

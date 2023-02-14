@@ -10,10 +10,10 @@
 }
 
 
-td:not(td:last-child){
+.profile td:not(td:last-child){
     padding-right: 150px;
 }
-td:not(.noPadding){
+.profile td:not(.noPadding){
     padding-bottom: 50px;
 }
 
@@ -96,12 +96,10 @@ td:not(.noPadding){
 }
 
 .modalButtons{
-    padding-top: 20px;
     padding-bottom: 30px;
     display: flex;
     justify-content: center;
     gap: 50px;
-    padding-right: 60px;
 }
 
 .cancelButton, .saveButton{

@@ -1,16 +1,146 @@
-.bold{
-    font-weight: 700;
+.bold {
+  font-weight: 700;
 }
-.subtitle{
-    font-size: 21px;
-    padding-bottom: 30px;
-}
-
-.modalButtonsNextPage{
-    padding-left: 60px;
+.subtitle {
+  font-size: 21px;
+  padding-bottom: 30px;
 }
 
-.planProgress{
-    padding-left: 50px;
-    padding-top: 5px;
+.modalButtonsNextPage {
+  padding-left: 60px;
+}
+
+.planProgress {
+  padding-left: 50px;
+  padding-top: 5px;
+}
+
+.pc2 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.pc2 input {
+  width: 200px;
+}
+
+::-webkit-input-placeholder {
+  color: #697ca6;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #697ca6;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #697ca6;
+}
+
+:-ms-input-placeholder {
+  color: #697ca6;
+}
+
+.activityBlock {
+  display: flex;
+  background: #718ffd;
+  color: white;
+  justify-content: space-between;
+  border-radius: 20px;
+  width: 80%;
+  padding: 25px 50px;
+  margin: 0 auto;
+}
+.activityBlockButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.activityBlock img {
+  width: 100px;
+}
+
+.activityBlockText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding-left: 50px;
+}
+
+.font27 {
+  font-size: 27px;
+}
+
+.activityBlockButtons .saveButton {
+  font-size: 21px;
+  background-color: white;
+  color: #718ffd;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.activitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.addPlaceButton:hover {
+  cursor: pointer;
+  color: #718ffd;
+}
+
+input[type="checkbox"] {
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
+}
+
+.dayPlan{
+  width: 130%;
+}
+
+.dayPlan td{
+  padding: 0;
+  padding-bottom: 15px;
+}
+
+.dayPlan .noPadding{
+  padding-bottom: 15px;
+}
+
+.dayPlanSlot{
+  font-weight: 700;
+  color: #718ffd;
+}
+
+.outOfPlan{
+  vertical-align: top;
+  color: #718ffd;
+}
+
+.checkboxVisiting{
+  margin-left: 15px;
+}
+
+.titleOutOfPlan{
+  padding-top:15px;
+}
+
+.refreshPlan{
+  display: flex;
+ justify-content: center;
+ padding-top: 15px;
+}
+
+.brButtons{
+  margin-top: 35px;
 }

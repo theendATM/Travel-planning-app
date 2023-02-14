@@ -21,10 +21,7 @@ return(
                         <td><input type='text' defaultValue={'Полуйкова'}/></td>
                     </tr>
                 </table>
-                <div className='modalButtons'>
-                    <button className='cancelButton'>Отменить</button>
-                    <button className='saveButton'>Сохранить</button>
-                </div>
+                
 
     </div>
  )   
