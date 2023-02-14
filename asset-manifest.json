@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/Travel-planning-app/static/css/main.2165391a.css",
-    "main.js": "/Travel-planning-app/static/js/main.9f908d64.js",
+    "main.css": "/Travel-planning-app/static/css/main.e9f0bff6.css",
+    "main.js": "/Travel-planning-app/static/js/main.cd5e4cb3.js",
     "static/js/787.2299c586.chunk.js": "/Travel-planning-app/static/js/787.2299c586.chunk.js",
     "static/media/mainImage.png": "/Travel-planning-app/static/media/mainImage.8dce540e0ac934e69d5f.png",
+    "static/media/exitIcon.svg": "/Travel-planning-app/static/media/exitIcon.199eb6e1f0ed0a35d3f770dea384101e.svg",
     "index.html": "/Travel-planning-app/index.html",
     "static/media/choice.svg": "/Travel-planning-app/static/media/choice.fd28d9e82be8f401b9a3cd852b3fa2e5.svg",
     "static/media/logo.svg": "/Travel-planning-app/static/media/logo.f39975aff8f45648ee2f324d2bd9e7b9.svg",
-    "main.2165391a.css.map": "/Travel-planning-app/static/css/main.2165391a.css.map",
-    "main.9f908d64.js.map": "/Travel-planning-app/static/js/main.9f908d64.js.map",
+    "main.e9f0bff6.css.map": "/Travel-planning-app/static/css/main.e9f0bff6.css.map",
+    "main.cd5e4cb3.js.map": "/Travel-planning-app/static/js/main.cd5e4cb3.js.map",
     "787.2299c586.chunk.js.map": "/Travel-planning-app/static/js/787.2299c586.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2165391a.css",
-    "static/js/main.9f908d64.js"
+    "static/css/main.e9f0bff6.css",
+    "static/js/main.cd5e4cb3.js"
   ]
 }
