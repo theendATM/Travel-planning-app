@@ -31,7 +31,7 @@
     margin-right: 5px;
 }
 
-.headerButtons span:hover{
+.headerButtons span:hover, .headerButtons img{
     cursor: pointer;
     color: black;
 }

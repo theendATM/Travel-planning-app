@@ -18,7 +18,7 @@ const Header=()=>{
     
         if(a.includes('profile'))
           button = document.querySelector('.profileNav');
-        else if(a.includes('personalPlans'))
+        else if(a.includes('personalPlans') || a.includes('planCreation'))
           button = document.querySelector('.personalPlansNav');
         else if(a.includes('defaultPlans'))
           button = document.querySelector('.defaultPlansNav');

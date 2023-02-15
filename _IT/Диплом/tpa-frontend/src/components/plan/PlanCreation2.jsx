@@ -41,9 +41,9 @@ const [isShownSettings, setIsShownSettings] = useState(false);
               <line x1="21" y1="12.5" x2="50" y2="12.5" stroke="#697CA6" />
               <line x1="70" y1="12.5" x2="100" y2="12.5" stroke="#697CA6" />
               <line x1="120" y1="12.5" x2="150" y2="12.5" stroke="#697CA6" />
-              <circle cx="11" cy="11" r="10" fill="white" stroke="#5E81FE" />
-              <circle cx="110" cy="11" r="10" fill="white" stroke="#5E81FE" />
-              <circle cx="160" cy="11" r="10" fill="white" stroke="#5E81FE" />
+              <circle cx="11" cy="11" r="10" fill="white" stroke="#5E81FE" onClick={()=>navigate('/planCreation/1')}/>
+              <circle cx="110" cy="11" r="10" fill="white" stroke="#5E81FE" onClick={()=>navigate('/planCreation/3')}/>
+              <circle cx="160" cy="11" r="10" fill="white" stroke="#5E81FE" onClick={()=>navigate('/planCreation/4')}/>
               <circle cx="60" cy="11" r="10" fill="#5E81FE" />
             </svg>
           </span>
@@ -62,17 +62,17 @@ const [isShownSettings, setIsShownSettings] = useState(false);
             <span className="subtitle">Описание</span>
             <span>
               <span>Сложность: </span><span>1</span><br/>
-              <span>Время нахождения: <span>30</span><span> минут</span></span>
+              <span>Время нахождения: <span>{count}</span><span> минут</span></span>
             </span>
             
           </div>
           <div className="activityBlockButtons">
-            <button className="saveButton">Добавить в план</button>
+            <button className="saveButton addIntoPlanButton">Добавить в план</button>
             <span className="personalSettings" onClick={handleClickSettings}>Персональные настройки</span>
             {isShownSettings && (
             <div className="personalSettingsOpen">
-              <span className="minusTime" onClick={decrement}>-</span>&nbsp; &nbsp; <span className="timeValue">{count}</span> 
-              <span> мин</span>&nbsp;&nbsp; <span onClick={increment} >+</span><br/>
+              <span className="minusTime changeTimeButtons" onClick={decrement} >-</span>&nbsp; &nbsp; <span className="timeValue">{count}</span> 
+              <span> мин</span>&nbsp;&nbsp; <span onClick={increment} className='changeTimeButtons'>+</span><br/>
               Обязательный визит<input type="checkbox" className="checkboxVisiting"></input>
             </div>)}
           </div>

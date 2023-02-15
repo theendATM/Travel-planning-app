@@ -1,5 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import logo from '../img/logo.svg';
 const DefaultPlans=()=>{
+
+  const navigate = useNavigate();
     return (
       <div className="profile">
         <div className="profileBlock">
@@ -13,7 +16,7 @@ const DefaultPlans=()=>{
                 <button className="saveButton">Поиск</button>
             </div>
             <div className="activitiesList">
-        <div className="activityBlock">
+        <div className="activityBlock" onClick={()=>navigate('/plan')}>
           <img src={logo} alt='' />
           <div className="activityBlockText">
             <span className="font27">Название</span>

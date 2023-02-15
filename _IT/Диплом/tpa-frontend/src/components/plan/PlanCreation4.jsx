@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 const PlanCreation4 = () => {
   const navigate = useNavigate();
+
+  const [title, setTitle]=useState(true);
+
   return (
     <div className="profile">
       <div className="profileBlock">
@@ -18,9 +21,9 @@ const PlanCreation4 = () => {
               <line x1="21" y1="12.5" x2="50" y2="12.5" stroke="#697CA6" />
               <line x1="70" y1="12.5" x2="100" y2="12.5" stroke="#697CA6" />
               <line x1="120" y1="12.5" x2="150" y2="12.5" stroke="#697CA6" />
-              <circle cx="60" cy="11" r="10" fill="white" stroke="#5E81FE" />
-              <circle cx="11" cy="11" r="10" fill="white" stroke="#5E81FE" />
-              <circle cx="110" cy="11" r="10" fill="white" stroke="#5E81FE" />
+              <circle cx="60" cy="11" r="10" fill="white" stroke="#5E81FE" onClick={()=>navigate('/planCreation/2')}/>
+              <circle cx="11" cy="11" r="10" fill="white" stroke="#5E81FE" onClick={()=>navigate('/planCreation/1')}/>
+              <circle cx="110" cy="11" r="10" fill="white" stroke="#5E81FE" onClick={()=>navigate('/planCreation/3')}/>
               <circle cx="160" cy="11" r="10" fill="#5E81FE" />
             </svg>
           </span>
@@ -129,7 +132,31 @@ const PlanCreation4 = () => {
                 </tr>
               </table>
             </td>
-            <td></td>
+            <td className="outOfPlan">
+              <span>ПЛАН ЗАПОЛНЕН НЕ ПОЛЬНОСТЬЮ</span>
+              <br></br>
+              <span>
+                Вам может понравиться:
+              </span>
+              <table className="titleOutOfPlan">
+                <tr>
+                  <td className="noPadding">Место 1</td>
+                  <td className="noPadding addUnadded" onClick={()=>setTitle(!title)}>
+                    {title? <span>Добавить в план</span> : <span>Добавлено</span>}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="noPadding">Место 2</td>
+                  <td className="noPadding addUnadded">
+                  Добавить в план
+                  </td>
+                </tr>
+              </table>
+              <div className="refreshPlan">
+                 <button className="saveButton">Обновить план</button>
+              </div>
+             
+            </td>
           </tr>
         </table>
 

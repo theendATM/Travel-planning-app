@@ -4,15 +4,19 @@ import ModalPI from './ModalPI';
 import ModalPN from './ModalPN';
 import ModalEA from './ModalEA';
 import ModalTourist from './ModalTourist';
+import ModalAddTourist from './ModalAddTourist';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Profile=()=>{
+
+    const navigate=useNavigate();
 
     const [modalActive1, setModalActive1]=useState(false);
     const [modalActive2, setModalActive2]=useState(false);
     const [modalActive3, setModalActive3]=useState(false);
     const [modalActive4, setModalActive4]=useState(false);
-    const [modalActive5, setModalActive5]=useState(false);
+    const [modalActive6, setModalActive6]=useState(false);
     
     return(
         <div className='profile'>
@@ -42,7 +46,7 @@ const Profile=()=>{
             <div className='profileBlock'>
                 <div className='headerBlock'>
                     <span>Туристы</span>
-                    <span className='changeButton'>Добавить туриста</span>
+                    <span className='changeButton' onClick={()=>setModalActive6(true)}>Добавить туриста</span>
                 </div>
                 <table>
                     <tr>
@@ -69,25 +73,22 @@ const Profile=()=>{
             <div className='profileBlock'>
                 <div className='headerBlock'>
                     <span>Мои планы</span>
-                    <span className='changeButton'>Создать план</span>
+                    <span className='changeButton' onClick={()=>navigate('/planCreation/1')}>Создать план</span>
                 </div>
                 <table>
-                    <tr>
-                        <td>Москва июль 2020</td>
+                    <tr >
+                        <td className='planDetailsButton' onClick={()=>navigate('/plan')}>Москва июль 2020</td>
                         <td>Туристы: 4</td>
-                        <td className='changeButton' onClick={()=>setModalActive5(true)}>Изменить</td>
                         <td className='deleteButton'>Удалить</td>
                     </tr>
                     <tr>
                         <td>Сочи август 2023</td>
                         <td>Туристы: - </td>
-                        <td className='changeButton'>Изменить</td>
                         <td className='deleteButton'>Удалить</td>
                     </tr>
                     <tr>
                         <td className='noPadding'>Каникулы в Москве (стандартный план)</td>
                         <td className='noPadding'>Туристы: -</td>
-                        <td className='noPadding changeButton'>Изменить</td>
                         <td className='noPadding deleteButton'>Удалить</td>
                     </tr>
                 </table>
@@ -105,8 +106,8 @@ const Profile=()=>{
             <ProfileModal active={modalActive4} setActive={setModalActive4}>
                 <ModalTourist/>
             </ProfileModal>
-            <ProfileModal active={modalActive5} setActive={setModalActive5}>
-                <div>5</div>
+            <ProfileModal active={modalActive6} setActive={setModalActive6}>
+                <ModalAddTourist/>
             </ProfileModal>
         </div>
          

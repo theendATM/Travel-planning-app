@@ -11,6 +11,7 @@ import PlanCreation3Page from './pages/PersonalPlansPage/PlanCreation3Page';
 import PlanCreation4Page from './pages/PersonalPlansPage/PlanCreation4Page';
 import TouristDestinationsPage from './pages/TouristDestinationsPage/TouristDestinationPage';
 import DefaultPlansPage from './pages/PersonalPlansPage/DefaultPlansPage';
+import PlanPage from './pages/PersonalPlansPage/PlanPage';
 
 const App=()=>{
 
@@ -27,6 +28,7 @@ const App=()=>{
           <Route path='/planCreation/4' element={<PlanCreation4Page />} />
           <Route path='/touristDestinations' element={<TouristDestinationsPage />} />
           <Route path='/defaultPlans' element={<DefaultPlansPage />} />
+          <Route path='/plan' element={<PlanPage />} />
         </Routes>
       </HashRouter>
     </div>

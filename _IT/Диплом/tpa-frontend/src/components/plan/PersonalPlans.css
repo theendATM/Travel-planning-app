@@ -144,3 +144,23 @@ input[type="checkbox"] {
 .brButtons{
   margin-top: 35px;
 }
+
+.changeTimeButtons{
+  -ms-user-select: none; 
+		-moz-user-select: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
+}
+
+.changeTimeButtons:hover, .personalSettings:hover{
+  cursor: pointer;
+}
+
+.addIntoPlanButton:hover{
+  background-color: #0735DC;
+  color: white;
+}
+
+svg circle:hover, .addUnadded:hover{
+  cursor: pointer;
+}

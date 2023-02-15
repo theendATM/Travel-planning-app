@@ -42,12 +42,12 @@ const TouristDestinations=()=>{
             <span className="subtitle">Описание</span>
             <span>
               <span>Сложность: </span><span>1</span><br/>
-              <span>Время нахождения: <span>30</span><span> минут</span></span>
+              <span>Время нахождения: <span>{count}</span><span> минут</span></span>
             </span>
             
           </div>
           <div className="activityBlockButtons addIntoPlan">
-            <button className="saveButton" onClick={handleClick}>Добавить в план</button>
+            <button className="saveButton addIntoPlanButton" onClick={handleClick}>Добавить в план</button>
             {isShown && (
             <div className='plansSelectList' o>
               <span>1</span>
@@ -60,8 +60,8 @@ const TouristDestinations=()=>{
             <span className="personalSettings" onClick={handleClickSettings}>Персональные настройки</span>
             {isShownSettings && (
             <div className="personalSettingsOpen">
-              <span className="minusTime" onClick={decrement}>-</span>&nbsp; &nbsp; <span className="timeValue">{count}</span> 
-              <span> мин</span>&nbsp;&nbsp; <span onClick={increment} >+</span><br/>
+              <span className="minusTime changeTimeButtons" onClick={decrement}>-</span>&nbsp; &nbsp; <span className="timeValue">{count}</span> 
+              <span> мин</span>&nbsp;&nbsp; <span onClick={increment} className='changeTimeButtons'>+</span><br/>
               Обязательный визит<input type="checkbox" className="checkboxVisiting"></input>
             </div>)}
           </div>

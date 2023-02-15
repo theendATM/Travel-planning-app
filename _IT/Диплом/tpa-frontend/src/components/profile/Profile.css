@@ -133,3 +133,7 @@ input, input:focus, select {
 .cancelButton:hover{
     background: #BFCDFD;
 }
+
+.planDetailsButton:hover{
+    cursor: pointer;
+}
