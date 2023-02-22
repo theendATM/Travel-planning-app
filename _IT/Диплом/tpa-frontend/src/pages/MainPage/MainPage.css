@@ -16,13 +16,19 @@
 
 .mainPageAdvantages{
     color: black;
-    font-size: 46px;
+    font-size: 27px;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     padding: 10px 20px;
     margin-bottom: 100px;
+    width: 70%;
+    margin-top: 150px;
 }
 
-.mainPageAdvantages ul{
+.mainPageAdvantages ol{
     margin: 0px;
+}
+
+.usualTextNotion{
+    font-size: 21px;
 }
