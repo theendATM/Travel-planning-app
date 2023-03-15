@@ -2,6 +2,7 @@ import logo from '../img/logo.svg';
 import "./TouristDestinations.css";
 import { useEffect } from 'react';
 import { useState } from 'react';
+import GetData from '../../functions/GetData.jsx';
 const TouristDestinations=()=>{
 
   const [isShown, setIsShown] = useState(false);
@@ -22,6 +23,45 @@ const TouristDestinations=()=>{
       setCount(prevCount =>  prevCount - 1)
 }
 
+const [interests, setInterests]=useState();
+const getInterests = async () => 
+    {
+        try
+        {
+            const result = await GetData("interests");
+            setInterests(result);
+        }
+        catch
+        {
+            
+        }
+    }
+
+    useEffect(() => {
+        getInterests();
+      }, []);
+
+
+      const [cities, setCities]=useState();
+      const getCities = async () => 
+          {
+              try
+              {
+                  const result = await GetData("cities");
+                  setCities(result);
+              }
+              catch
+              {
+                  
+              }
+          }
+      
+          useEffect(() => {
+              getCities();
+            }, []);
+
+          
+
     return (
       <div className="profile">
         <div className="profileBlock">
@@ -29,8 +69,18 @@ const TouristDestinations=()=>{
             <span>Туристические места</span>
           </div>
             <div className="subtitle tds">
-                <input type='text' placeholder="Город"></input>
-                <input type='text' placeholder="Типы"></input>
+            <select /*multiple={true}*/>
+              <option selected="true" disabled="disabled">Город</option>
+                {cities ? cities.map((city) => 
+                  <option>{city.name}</option>
+               ):<option></option>}
+               </select>
+               <select /*multiple={true}*/>
+              <option selected="true" disabled="disabled">Интересы</option>
+                {interests ? interests.map((interest) => 
+                  <option>{interest.name}</option>
+               ):<option></option>}
+               </select>
                 <button className="saveButton">Поиск</button>
 
             </div>

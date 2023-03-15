@@ -98,7 +98,7 @@ const [isShownSettings, setIsShownSettings] = useState(false);
 
         
         <div className="modalButtons modalButtonsNextPage brButtons">
-          <button className="cancelButton">Сохранить черновик</button>
+          <button className="cancelButton">Отменить</button>
           <button
             className="saveButton"
             onClick={() => navigate("/planCreation/3")}>

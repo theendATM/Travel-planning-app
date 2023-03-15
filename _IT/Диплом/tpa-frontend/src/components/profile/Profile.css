@@ -74,12 +74,14 @@
     padding: 10px;
     border-radius: 20px;
     background-color: white;
+    min-width: 450px;
 }
 .headerText{
     font-size: 27px;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-right: 60px;
+    text-align: center;
 }
 
 .modalChild{
@@ -136,4 +138,8 @@ input, input:focus, select {
 
 .planDetailsButton:hover{
     cursor: pointer;
+}
+
+.errorText{
+    text-align: center;  
 }

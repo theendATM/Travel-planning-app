@@ -1,12 +1,15 @@
 import './Profile.css';
 import ProfileModal from './ProfileModal';
 import ModalPI from './ModalPI';
-import ModalPN from './ModalPN';
-import ModalEA from './ModalEA';
 import ModalTourist from './ModalTourist';
 import ModalAddTourist from './ModalAddTourist';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import GetDataWithParams from '../../functions/GetDataWithParams';
+import Cookies from 'js-cookie';
+import PostDeleteToutist from '../../functions/PostDeleteToutist';
+import ModalPN from './ModalPN';
 
 const Profile=()=>{
 
@@ -14,10 +17,34 @@ const Profile=()=>{
 
     const [modalActive1, setModalActive1]=useState(false);
     const [modalActive2, setModalActive2]=useState(false);
-    const [modalActive3, setModalActive3]=useState(false);
     const [modalActive4, setModalActive4]=useState(false);
     const [modalActive6, setModalActive6]=useState(false);
-    
+
+    const [userName, setUserName]=useState();
+      const getUserName = async () => 
+        {
+        try
+        {
+            const result = await GetDataWithParams("profile",Cookies.get('email'));
+            console.log(Cookies.get('email'));
+            setUserName(result);
+        }
+        catch
+        {
+            
+        }
+    }
+
+    useEffect(() => {
+      getUserName();
+      }, []);
+    console.log(userName);
+
+    const DeleteTourist=(id)=>{
+        PostDeleteToutist(id);
+        window.location.reload();
+    }
+
     return(
         <div className='profile'>
             <div className='profileBlock'>
@@ -26,19 +53,20 @@ const Profile=()=>{
                 </div>
                 <table>
                     <tr>
-                        <td>Имя и фамилия</td>
-                        <td>Евгения Полуйкова</td>
+                        <td>Имя</td>
+                        <td>{userName?userName.name:""}</td>
                         <td className='changeButton' onClick={()=>setModalActive1(true)}>Изменить</td>
                     </tr>
                     <tr>
                         <td>Номер телефона</td>
-                        <td>8 (900) 000-00-00</td>
+                        <td>{userName?userName.phone:""}</td>
                         <td className='changeButton' onClick={()=>setModalActive2(true)}>Изменить</td>
+                        
                     </tr>
                     <tr>
                         <td className='noPadding'>E-mail</td>
-                        <td className='noPadding'>выаотыв@mail.ru</td>
-                        <td className='noPadding changeButton' onClick={()=>setModalActive3(true)}>Изменить</td>
+                        <td className='noPadding'>{userName?userName.email:""}</td>
+                    
                     </tr>
                 </table>
             </div>
@@ -49,24 +77,18 @@ const Profile=()=>{
                     <span className='changeButton' onClick={()=>setModalActive6(true)}>Добавить туриста</span>
                 </div>
                 <table>
+                    {
+                    userName ? userName.tourists.map((tourist) => 
                     <tr>
-                        <td>Евгения Полуйкова добрая</td>
-                        <td>Поездки: 5</td>
-                        <td className='changeButton' onClick={()=>setModalActive4(true)}>Изменить</td>
-                        <td className='deleteButton'>Удалить</td>
-                    </tr>
-                    <tr>
-                        <td>Евгения Полуйкова уставшая</td>
-                        <td>Поездки: 10</td>
-                        <td className='changeButton'>Изменить</td>
-                        <td className='deleteButton'>Удалить</td>
-                    </tr>
-                    <tr>
-                        <td className='noPadding'>Евгения Полуйкова нейтральна</td>
-                        <td className='noPadding'>Поездки: 10</td>
-                        <td className='noPadding changeButton'>Изменить</td>
-                        <td className='noPadding deleteButton'>Удалить</td>
-                    </tr>
+                  <td>{tourist.name}</td>
+                  <td>Возраст: {tourist.age}</td>
+                  <td className='changeButton'>Изменить</td>
+                        <td key={tourist.id} className='deleteButton' 
+                        onClick={
+                         ()=>DeleteTourist(tourist.id)   
+
+                        }>Удалить</td></tr>
+                    ):<tr><td></td></tr>}
                 </table>
             </div>
 
@@ -76,33 +98,23 @@ const Profile=()=>{
                     <span className='changeButton' onClick={()=>navigate('/planCreation/1')}>Создать план</span>
                 </div>
                 <table>
-                    <tr >
-                        <td className='planDetailsButton' onClick={()=>navigate('/plan')}>Москва июль 2020</td>
-                        <td>Туристы: 4</td>
-                        <td className='deleteButton'>Удалить</td>
-                    </tr>
+                {
+                    userName ? userName.plans.map((plan) => 
                     <tr>
-                        <td>Сочи август 2023</td>
-                        <td>Туристы: - </td>
-                        <td className='deleteButton'>Удалить</td>
-                    </tr>
-                    <tr>
-                        <td className='noPadding'>Каникулы в Москве (стандартный план)</td>
-                        <td className='noPadding'>Туристы: -</td>
-                        <td className='noPadding deleteButton'>Удалить</td>
-                    </tr>
+                  <td>{plan.name}</td>
+                  <td>Город: {plan.city}</td>
+                  <td>Даты: {plan.arrivalTime}-{plan.departureTime}</td>
+                        <td className='deleteButton'>Удалить</td></tr>
+                    ):<tr><td></td></tr>}
                 </table>
             </div>
-            <ProfileModal active={modalActive1} setActive={setModalActive1}>
-                <ModalPI/>
-            </ProfileModal>
+            <ModalPI active={modalActive1} setActive={setModalActive1} 
+            name={userName?userName.name:""} email={userName?userName.email:""} phone={userName?userName.phone:""}>
+                </ModalPI>
+                <ModalPN active={modalActive2} setActive={setModalActive2} 
+            name={userName?userName.name:""} email={userName?userName.email:""} phone={userName?userName.phone:""}>
+                </ModalPN>
 
-            <ProfileModal active={modalActive2} setActive={setModalActive2}>
-                <ModalPN/>
-            </ProfileModal>
-            <ProfileModal active={modalActive3} setActive={setModalActive3}>
-                <ModalEA/>
-            </ProfileModal>
             <ProfileModal active={modalActive4} setActive={setModalActive4}>
                 <ModalTourist/>
             </ProfileModal>

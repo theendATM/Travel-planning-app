@@ -1,6 +1,18 @@
 import Header from "../../components/header/Header";
 import './MainPage.css';
+import Login from "../../components/header/Login";
+import { useState } from "react";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
+
 const MainPage = () => {
+
+  const [modalActive1, setModalActive1]=useState();
+  useEffect(() => {
+    if(Cookies.get('email')===null || Cookies.get('email')===undefined || Cookies.get('email').length===0){
+      setModalActive1(true)
+    }
+  }, []);
 
     return(
       <div className="mainPage">
@@ -27,6 +39,8 @@ const MainPage = () => {
             <span className="usualTextNotion">С более подробной инструкцией о работе с сервисом вы можете ознакомиться <a href="">тут</a>  </span>
           </div>
         </div>
+        <Login active={modalActive1} setActive={setModalActive1}>
+          </Login>
       </div>
     )
 }

@@ -48,3 +48,8 @@
 .highlight{
     color: #718FFD;
   }
+
+  .userNameHeader:hover{
+    cursor: pointer;
+    color: black;
+  }

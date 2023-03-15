@@ -1,9 +1,28 @@
 import './Profile.css';
 import { useState } from 'react';
+import { useEffect } from 'react';
+import GetData from '../../functions/GetData.jsx';
 import ProfileModal from './ProfileModal';
 
 const ModalAddTourist=()=>{
 
+    const [interests, setInterests]=useState();
+    const getInterests = async () => 
+    {
+        try
+        {
+            const result = await GetData("interests");
+            setInterests(result);
+        }
+        catch
+        {
+            
+        }
+    }
+
+    useEffect(() => {
+        getInterests();
+      }, []);
 
 return(
     <div className='modalChild'>
@@ -23,10 +42,12 @@ return(
                     <tr>
                         <td className='modalTable'>Интересы</td>
                         <td>
-                            <select>
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
+                        <select /*multiple={true}*/>
+              <option selected="true" disabled="disabled">Интересы</option>
+                {interests ? interests.map((interest) => 
+                  <option>{interest.name}</option>
+               ):<option></option>}
+               </select>
 
                             </td>
                     </tr>

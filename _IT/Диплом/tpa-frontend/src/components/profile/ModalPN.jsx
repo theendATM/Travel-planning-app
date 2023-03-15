@@ -1,32 +1,38 @@
-import "./Profile.css";
-import IMask from "imask";
-import { useEffect } from "react";
+import './Profile.css';
+import PatchUserInfo from '../../functions/PatchUserInfo';
+import { useState } from 'react';
 
-const ModalPN = () => {
-  useEffect(() => {
-    var element = document.getElementById("phone");
-    var maskOptions = {
-      mask: "+{7}(000)000-00-00",
-      lazy: false,
-    };
-    var mask = new IMask(element, maskOptions);
-  });
-  return (
-    <div className="modalChild">
-      <script src="https://unpkg.com/imask"></script>
-      <div className="headerText">
-        <span>Изменение номера телефона</span>
-      </div>
+const ModalPN=({active,setActive,email, name, phone})=>{
 
-      <table>
-        <tr>
-          <td className="modalTable">Номер телефона</td>
-          <td>
-            <input id="phone" type="text" placeholder="+7(900)000-00-00" />
-          </td>
-        </tr>
-      </table>
+    const [newPhone, setNewPhone] = useState("");
+
+    const doThings=()=>{
+        PatchUserInfo(email,name,newPhone);
+        setActive(false);
+        window.location.reload();
+    }
+return(
+    <div className={active ? 'profileModal active' : 'profileModal'} onClick={()=>setActive(false)}>
+    <div className='profileModalContent' onClick={e=>e.stopPropagation()}>
+    <div className='modalChild'>
+        <div className='headerText'> 
+                    <span>Изменение персональной информации</span>
+                </div>
+                
+                <table>
+                    <tr>
+                        <td className='modalTable'>Номер телефона</td>
+                        <td><input type='text' defaultValue={phone} onChange={(e) => setNewPhone(e.target.value)}/></td>
+                    </tr>
+                </table>
+                <div className='modalButtons'>
+                    <button className='cancelButton' onClick={()=>setActive(false)}>Отменить</button>
+                    <button className='saveButton' onClick={doThings}>Сохранить</button>
+                </div>
+                
+</div>
+</div>
     </div>
-  );
-};
+ )   
+}
 export default ModalPN;

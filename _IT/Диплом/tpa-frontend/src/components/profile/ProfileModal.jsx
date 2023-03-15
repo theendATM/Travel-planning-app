@@ -8,7 +8,6 @@ const ProfileModal=({active,setActive,children})=>{
                 {children}
                 <div className='modalButtons'>
                     <button className='cancelButton' onClick={()=>setActive(false)}>Отменить</button>
-                    <button className='saveButton'>Сохранить</button>
                 </div>
             </div>
         </div>

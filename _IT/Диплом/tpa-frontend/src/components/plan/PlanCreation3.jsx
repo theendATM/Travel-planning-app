@@ -1,7 +1,29 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
+import { useState } from 'react';
+import GetData from '../../functions/GetData.jsx';
 
 const PlanCreation3 = () => {
   const navigate = useNavigate();
+
+  const [movingTypes, setMovingTypes]=useState();
+const getMovingTypes = async () => 
+    {
+        try
+        {
+            const result = await GetData("movingTypes");
+            setMovingTypes(result);
+        }
+        catch
+        {
+            
+        }
+    }
+
+    useEffect(() => {
+        getMovingTypes();
+      }, []);
+
   return (
     <div className="profile">
       <div className="profileBlock">
@@ -64,19 +86,18 @@ const PlanCreation3 = () => {
             <tr>
               <td className="modalTable">Предпочитаемый вид перемещения:</td>
               <td>
-                <select>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                <select /*multiple={true}*/>
+              <option selected="true" disabled="disabled">Типы перемещений</option>
+                {movingTypes ? movingTypes.map((movingType) => 
+                  <option>{movingType.name}</option>
+               ):<option></option>}
+               </select>
               </td>
             </tr>
           </table>
 
           <div className="modalButtons modalButtonsNextPage">
-            <button className="cancelButton">Сохранить черновик</button>
+            <button className="cancelButton">Отменить</button>
             <button
               className="saveButton"
               onClick={() => navigate("/planCreation/4")}

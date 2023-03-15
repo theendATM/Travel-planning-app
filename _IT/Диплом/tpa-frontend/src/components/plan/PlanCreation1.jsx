@@ -1,8 +1,47 @@
 import "./PersonalPlans.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useEffect } from 'react';
+import GetData from '../../functions/GetData.jsx';
 
 const PlanCreation1 = () => {
   const navigate = useNavigate();
+
+  const [cities, setCities]=useState();
+      const getCities = async () => 
+          {
+              try
+              {
+                  const result = await GetData("cities");
+                  setCities(result);
+              }
+              catch
+              {
+                  
+              }
+          }
+      
+          useEffect(() => {
+              getCities();
+            }, []);
+
+            const [difficulties, setDifficulties]=useState();
+            const getDifficulties = async () => 
+                {
+                    try
+                    {
+                        const result = await GetData("difficulties");
+                        setDifficulties(result);
+                    }
+                    catch
+                    {
+                        
+                    }
+                }
+            
+                useEffect(() => {
+                    getDifficulties();
+                  }, []);
 
   return (
     <div className="profile">
@@ -41,10 +80,12 @@ const PlanCreation1 = () => {
           <tr>
             <td className="modalTable">Город:</td>
             <td>
-              <select>
-                <option>Москва</option>
-                <option>Тюмень</option>
-              </select>
+            <select /*multiple={true}*/>
+              <option selected="true" disabled="disabled">Город</option>
+                {cities ? cities.map((city) => 
+                  <option>{city.name}</option>
+               ):<option></option>}
+               </select>
             </td>
           </tr>
           <tr>
@@ -56,13 +97,12 @@ const PlanCreation1 = () => {
           <tr>
             <td className="modalTable">Предпочитаемая сложность:</td>
             <td>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+            <select /*multiple={true}*/>
+              <option selected="true" disabled="disabled">Предпочитаемая сложность</option>
+                {difficulties ? difficulties.map((difficulty) => 
+                  <option>{difficulty.name}</option>
+               ):<option></option>}
+               </select>
             </td>
           </tr>
           <tr>
@@ -79,7 +119,7 @@ const PlanCreation1 = () => {
           </tr>
         </table>
         <div className="modalButtons modalButtonsNextPage">
-          <button className="cancelButton">Сохранить черновик</button>
+          <button className="cancelButton">Отменить</button>
           <button
             className="saveButton"
             onClick={() => navigate("/planCreation/2")}
