@@ -115,12 +115,9 @@ const Profile=()=>{
             name={userName?userName.name:""} email={userName?userName.email:""} phone={userName?userName.phone:""}>
                 </ModalPN>
 
-            <ProfileModal active={modalActive4} setActive={setModalActive4}>
-                <ModalTourist/>
-            </ProfileModal>
-            <ProfileModal active={modalActive6} setActive={setModalActive6}>
-                <ModalAddTourist/>
-            </ProfileModal>
+
+            <ModalAddTourist active={modalActive6} setActive={setModalActive6}>
+            </ModalAddTourist>
         </div>
          
     )

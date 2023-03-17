@@ -1,15 +1,15 @@
 import axios from "axios"
 
-const PatchUserInfo = async (email, name, interests, age) => {
+const AddTourist = async (email, name, interests, age) => {
     try
     {
         const result = await axios({
             method: "post",
             url: "https://localhost:7020/tourist/add",
             withCredentials: 'include',
-            params: {
-                email:email,
-                interests:interests,
+            data: {
+                "user-email":email,
+                "interest-ids":interests,
                 name:name,
                 age:age
             },
@@ -35,4 +35,4 @@ const PatchUserInfo = async (email, name, interests, age) => {
     }
 }
 
-export default PatchUserInfo;
+export default AddTourist;
