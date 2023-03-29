@@ -1,5 +1,4 @@
 import '../profile/Profile.css';
-import AddressSearch from '../../functions/SearchMap';
 
 const ModalAddPlace=()=>{
 
@@ -21,7 +20,7 @@ return(
                     </tr>
                     <tr>
                         <td className='modalTable'>Адрес</td>
-                        <td><AddressSearch/></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td className='modalTable'>Обязательное посещения</td>

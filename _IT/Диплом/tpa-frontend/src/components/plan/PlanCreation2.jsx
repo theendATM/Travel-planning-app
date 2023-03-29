@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import ModalAddPlace from "./ModalAddPlace";
 import logo from '../img/logo.svg';
 import ProfileModal from '../profile/ProfileModal';
+import GetSuitableLandmarks from "../../functions/Get/GetSuitableLandmarks";
+import Cookies from "js-cookie";
 
 const PlanCreation2 = () => {
   const navigate = useNavigate();
@@ -25,6 +27,14 @@ const [isShownSettings, setIsShownSettings] = useState(false);
     setIsShownSettings(current => !current);
   };
  
+
+  const [suitableLandmarks, setSuitableLandmarks] = useState();
+  const getMereLandmarks = async () => {
+    try {
+      const result = await GetSuitableLandmarks(Cookies.get("tourists"), Cookies.get("city"),Cookies.get("difficulties"));
+      setSuitableLandmarks(result);
+    } catch {}
+  };
   return (
     <div className="profile">
       <div className="profileBlock">

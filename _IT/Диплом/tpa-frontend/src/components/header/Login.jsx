@@ -1,7 +1,7 @@
 import '../profile/Profile.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import PostLogin from '../../functions/PostLogin';
+import PostLogin from '../../functions/Post/PostLogin';
 import Header from './Header';
 import Cookies from 'js-cookie';
 
@@ -64,7 +64,7 @@ return(
     </div>
     <div className='modalButtons'>
                     <button className='cancelButton' onClick={()=>setActive(false)}>Отменить</button>
-                    <button className='saveButton' onClick={postData}>Сохранить</button>
+                    <button className='saveButton' onClick={postData}>Войти</button>
                 </div>
             </div>
         </div>

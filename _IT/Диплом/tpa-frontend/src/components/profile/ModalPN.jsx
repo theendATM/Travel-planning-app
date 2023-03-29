@@ -1,5 +1,5 @@
 import './Profile.css';
-import PatchUserInfo from '../../functions/PatchUserInfo';
+import PatchUserInfo from '../../functions/Patch/PatchUserInfo';
 import { useState } from 'react';
 
 const ModalPN=({active,setActive,email, name, phone})=>{

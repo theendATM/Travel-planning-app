@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../img/logo.svg';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import GetData from '../../functions/GetData.jsx';
+import GetData from '../../functions/Get/GetData.jsx';
 
 const DefaultPlans=()=>{
 

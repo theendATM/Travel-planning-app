@@ -168,3 +168,16 @@ svg circle:hover, .addUnadded:hover{
 .inputSize{
   width: 100px;
 }
+
+
+.multSelect{
+  height:20px;
+}
+
+.activeMultSelect{
+  height:80px;
+}
+
+.hidden{
+  visibility: hidden;
+}

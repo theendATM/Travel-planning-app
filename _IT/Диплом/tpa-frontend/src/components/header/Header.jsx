@@ -6,7 +6,7 @@ import './Header.css';
 import { useEffect } from 'react';
 import Login from './Login';
 import { useState } from "react";
-import GetDataWithParams from '../../functions/GetDataWithParams';
+import GetDataWithParams from '../../functions/Get/GetDataWithParams';
 import Cookies from 'js-cookie';
 
 const Header=()=>{
